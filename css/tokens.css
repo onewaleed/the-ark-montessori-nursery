@@ -56,9 +56,10 @@
   /* Radii */
   --radius-xs: 4px;
   --radius-sm: 8px;
-  --radius-md: 12px;
-  --radius-lg: 20px;
-  --radius-xl: 32px;
+  --radius-md: 14px;
+  --radius-lg: 24px;
+  --radius-xl: 36px;
+  --radius-arch: 100px 100px 24px 24px;
   --radius-full: 9999px;
   
   /* Shadows */

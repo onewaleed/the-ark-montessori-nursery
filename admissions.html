@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/header.css">
   <link rel="stylesheet" href="css/subpages.css">
+  <link rel="stylesheet" href="css/calculator.css">
   <link rel="stylesheet" href="css/footer.css">
   <link rel="stylesheet" href="css/modal.css">
 </head>
@@ -62,7 +63,7 @@
         <div class="breadcrumb">
           <a href="index.html">Home</a> <span>/</span> <span>Admissions & Fees</span>
         </div>
-        <span class="eyebrow">ENROLMENT & FUNDING</span>
+        <span class="eyebrow">JOIN THE ARK FAMILY</span>
         <h1 class="subpage-title">Welcoming New Children<br>& Supporting Families.</h1>
         <p class="subpage-lead">We aim to make our admissions journey clear, warm, and supportive. We proudly accept 15 and 30 hours Government Early Years Funded Entitlement.</p>
       </div>
@@ -76,48 +77,51 @@
             <img src="assets/images/eyfs-learning.png" alt="Children engaged in EYFS early years foundation stage learning">
           </div>
           <div>
-            <h2 style="font-size: 2rem; font-weight: 500; margin-bottom: 1.25rem;">Funded Childcare for 2 to 5 Year Olds</h2>
-            <p style="margin-bottom: 1rem;">We offer flexible scheduling options to suit working parents. Whether using 15 hours universal entitlement or 30 hours extended working parent funding, our team helps streamline the voucher application process.</p>
+            <h2 class="subpage-heading">Funded Childcare for 2 to 5 Year Olds</h2>
+            <p class="subpage-text">We offer flexible scheduling options to suit working parents. Whether using 15 hours universal entitlement or 30 hours extended working parent funding, our team helps streamline the voucher application process.</p>
             <p>Tax-Free Childcare and student childcare grants are also gladly accepted.</p>
           </div>
         </div>
 
         <div id="fees" style="margin-top: 4rem;">
-          <h2 style="font-size: 2rem; font-weight: 500; margin-bottom: 1rem;">Session Fees & Funding Structure</h2>
-          <p style="max-width: 700px; margin-bottom: 1.5rem;">We offer flexible full-day and half-day sessions. 15-hour and 30-hour government funding codes for eligible 2, 3, and 4-year-olds can be applied across term-time or stretched funding models.</p>
+          <h2 style="font-size: 2rem; font-weight: 500; margin-bottom: 1rem;">Session Fees & Government Funding</h2>
+          <p style="max-width: 750px; margin-bottom: 1.5rem;">We aim to make quality Montessori education accessible. To support the needs of our families, we offer two structured 3-hour sessions each day: <strong>Morning (9:00am – 12:00pm)</strong> and <strong>Afternoon (12:00pm – 3:00pm)</strong>.</p>
 
           <div class="table-wrapper">
             <table class="pricing-table">
               <thead>
                 <tr>
-                  <th>Session Type</th>
-                  <th>Hours</th>
-                  <th>Standard Fee (Non-Funded)</th>
-                  <th>With 15/30 Hours Funding</th>
+                  <th>Age Group</th>
+                  <th>Session Timings</th>
+                  <th>Cost Per Session (Private)</th>
+                  <th>Government Funding Entitlement</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td><strong>Morning Montessori Session</strong></td>
-                  <td>9:00 AM – 12:30 PM</td>
-                  <td>£42.00 / session</td>
-                  <td>Fully Funded / Free Entitlement</td>
+                  <td><strong>2-Year-Olds</strong></td>
+                  <td>9:00 AM – 12:00 PM OR 12:00 PM – 3:00 PM</td>
+                  <td>£30.00 / session</td>
+                  <td>Up to 15 hours / week funded for eligible families</td>
                 </tr>
                 <tr>
-                  <td><strong>Afternoon Session</strong></td>
-                  <td>12:30 PM – 3:30 PM</td>
-                  <td>£36.00 / session</td>
-                  <td>Fully Funded / Free Entitlement</td>
+                  <td><strong>3–5-Year-Olds</strong></td>
+                  <td>9:00 AM – 12:00 PM OR 12:00 PM – 3:00 PM</td>
+                  <td>£25.00 / session</td>
+                  <td>15 hours Universal Funding for all families</td>
                 </tr>
                 <tr>
-                  <td><strong>Full Day Care</strong></td>
-                  <td>8:00 AM – 6:00 PM</td>
-                  <td>£78.00 / day</td>
-                  <td>Subsidised via 30 Hours Funding</td>
+                  <td><strong>3–5-Year-Olds (Extended)</strong></td>
+                  <td>Full Day (9:00 AM – 3:00 PM · Both Sessions)</td>
+                  <td>£50.00 / day</td>
+                  <td>Up to 30 hours / week for eligible working families</td>
                 </tr>
               </tbody>
             </table>
           </div>
+
+          <!-- Interactive Fee Calculator Container -->
+          <div id="fee-calculator-root"></div>
         </div>
       </div>
     </section>

@@ -47,12 +47,12 @@ export function initMontessoriInteractive() {
     if (!data || !infoContainer) return;
 
     infoContainer.innerHTML = `
-      <div style="background-color: var(--color-sand); border-radius: var(--radius-md); padding: 1.5rem 1.75rem; border: 1px solid rgba(12, 35, 51, 0.08); animation: fadeIn 0.3s ease;">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+      <div class="montessori-detail-box">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem; flex-wrap: wrap; gap: 0.5rem;">
           <span style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-gold-dark);">Stage ${data.step} • ${data.apparatus}</span>
-          <span style="font-size: 0.75rem; font-weight: 600; color: var(--color-forest); background: rgba(18, 68, 54, 0.08); padding: 2px 8px; border-radius: 99px;">${data.skills}</span>
+          <span style="font-size: 0.75rem; font-weight: 600; color: var(--color-forest); background: rgba(18, 68, 54, 0.08); padding: 3px 10px; border-radius: 99px;">${data.skills}</span>
         </div>
-        <h4 style="font-family: var(--font-serif); font-size: 1.1875rem; color: var(--color-navy); margin-bottom: 0.4rem;">${data.title}</h4>
+        <h4 style="font-family: var(--font-serif); font-size: 1.25rem; color: var(--color-navy); margin-bottom: 0.4rem; font-weight: 500;">${data.title}</h4>
         <p style="font-size: 0.9375rem; line-height: 1.6; color: #3C4B56; margin: 0;">${data.description}</p>
       </div>
     `;

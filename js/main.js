@@ -9,12 +9,14 @@ import { initTestimonialSlider } from './testimonial-slider.js';
 import { initVisitModal } from './visit-modal.js';
 import { initFooter } from './footer.js';
 import { initHeroTilt } from './hero-tilt.js';
+import { initFeeCalculator } from './fee-calculator.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   // Initialize Core Modules
   initNavigation();
   initFooter();
   initHeroTilt();
+  initFeeCalculator();
   initMontessoriInteractive();
   initTestimonialSlider();
   initVisitModal();
