@@ -66,6 +66,10 @@ h1, h2, h3, h4, .font-serif {
   display: inline-block;
 }
 
+.nowrap {
+  white-space: nowrap;
+}
+
 p {
   color: #3C4B56;
   font-size: 1.0625rem;

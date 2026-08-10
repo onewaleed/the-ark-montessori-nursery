@@ -45,9 +45,14 @@
 }
 
 .brand-logo img {
-  height: 48px;
+  height: 66px;
   width: auto;
   object-fit: contain;
+  transition: transform var(--transition-fast);
+}
+
+.brand-logo:hover img {
+  transform: scale(1.03);
 }
 
 /* Desktop Navigation Menu */

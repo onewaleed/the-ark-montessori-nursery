@@ -22,6 +22,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  perspective: 1000px;
 }
 
 .hero-title {
@@ -31,6 +32,9 @@
   color: var(--color-navy);
   margin-bottom: 1.5rem;
   letter-spacing: -0.02em;
+  transform-style: preserve-3d;
+  will-change: transform;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .hero-title .hero-accent {
@@ -47,16 +51,24 @@
 }
 
 .hero-subtitle {
-  font-size: 1.1875rem;
-  line-height: 1.65;
-  color: #354652;
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: #3C4B56;
   margin-bottom: 2.25rem;
-  max-width: 480px;
+  max-width: 580px;
 }
 
 .hero-subtitle strong {
   color: var(--color-navy);
   font-weight: 600;
+}
+
+.hero-subtitle .brand-font {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  color: var(--color-navy);
+  font-size: 1.04em;
+  letter-spacing: -0.01em;
 }
 
 .hero-actions {
