@@ -1,0 +1,181 @@
+/**
+ * The Ark Montessori Nursery - Modal & Overlay Styles
+ * "Book a Visit" modal, apparatus inspector popup & toast notifications
+ */
+
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(7, 23, 34, 0.6);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: all var(--transition-smooth);
+}
+
+.modal-backdrop.is-active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-card {
+  background-color: var(--color-white);
+  border-radius: var(--radius-lg);
+  max-width: 580px;
+  width: 100%;
+  box-shadow: var(--shadow-modal);
+  border: 1px solid rgba(12, 35, 51, 0.08);
+  position: relative;
+  overflow: hidden;
+  transform: translateY(20px) scale(0.97);
+  transition: all var(--transition-smooth);
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-backdrop.is-active .modal-card {
+  transform: translateY(0) scale(1);
+}
+
+.modal-header {
+  padding: 2rem 2.25rem 1.25rem;
+  border-bottom: 1px solid rgba(12, 35, 51, 0.06);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--color-cream-light);
+}
+
+.modal-title {
+  font-size: 1.5rem;
+  font-family: var(--font-serif);
+  color: var(--color-navy);
+}
+
+.modal-close {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-warm-gray);
+  transition: all var(--transition-fast);
+}
+
+.modal-close:hover {
+  background-color: var(--color-sand);
+  color: var(--color-navy);
+}
+
+.modal-body {
+  padding: 2rem 2.25rem;
+  overflow-y: auto;
+}
+
+/* Form Controls */
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+.form-label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-navy);
+  margin-bottom: 0.375rem;
+}
+
+.form-input, .form-select, .form-textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(12, 35, 51, 0.18);
+  background-color: var(--color-cream-light);
+  font-family: inherit;
+  font-size: 0.9375rem;
+  color: var(--color-navy);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.form-input:focus, .form-select:focus, .form-textarea:focus {
+  outline: none;
+  border-color: var(--color-forest);
+  background-color: var(--color-white);
+  box-shadow: 0 0 0 3px rgba(18, 68, 54, 0.12);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+/* Success Confirmation Screen */
+.modal-success-screen {
+  display: none;
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+.modal-success-screen.is-visible {
+  display: block;
+}
+
+.success-icon-badge {
+  width: 64px;
+  height: 64px;
+  background-color: var(--color-forest);
+  color: var(--color-white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  font-size: 1.75rem;
+}
+
+/* Toast Notifications */
+.toast-notification {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background-color: var(--color-navy);
+  color: var(--color-white);
+  padding: 1rem 1.5rem;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-modal);
+  border-left: 4px solid var(--color-gold);
+  z-index: 3000;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  transform: translateY(100px);
+  opacity: 0;
+  transition: all var(--transition-smooth);
+}
+
+.toast-notification.is-shown {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+@media (max-width: 576px) {
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+  
+  .modal-body {
+    padding: 1.5rem 1.25rem;
+  }
+}

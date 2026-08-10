@@ -1,0 +1,74 @@
+/**
+ * The Ark Montessori Nursery - Design Tokens
+ * Master Brand Palette & Design Constants
+ */
+
+:root {
+  /* Brand Palette from Official Ark Identity */
+  --color-navy: #0C2333;
+  --color-navy-dark: #071722;
+  --color-navy-light: #18374D;
+  
+  --color-forest: #124436;
+  --color-forest-dark: #0D3328;
+  --color-forest-light: #1B5C4A;
+  --color-teal: #1A4D43;
+  
+  --color-gold: #C89B53;
+  --color-gold-light: #DFB260;
+  --color-gold-dark: #A57C36;
+  --color-gold-subtle: #F4E8D2;
+  
+  --color-cream: #FAF7F2;
+  --color-cream-light: #FDFBF8;
+  --color-sand: #F2ECE4;
+  --color-sand-dark: #E5DCD1;
+  --color-warm-gray: #716D68;
+  --color-warm-gray-light: #9B968F;
+  
+  --color-terracotta: #C26D55;
+  --color-terracotta-light: #E7A896;
+  
+  --color-white: #FFFFFF;
+  --color-black: #111111;
+  
+  /* Typography */
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-serif-accent: 'Newsreader', 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+  --font-sans: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  
+  /* Spacing Scale */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4.5rem;
+  --space-4xl: 6rem;
+  
+  /* Layout & Containers */
+  --container-max: 1240px;
+  --container-wide: 1380px;
+  --container-narrow: 980px;
+  --header-height: 84px;
+  
+  /* Radii */
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 32px;
+  --radius-full: 9999px;
+  
+  /* Shadows */
+  --shadow-subtle: 0 4px 20px rgba(12, 35, 51, 0.05);
+  --shadow-card: 0 10px 30px rgba(12, 35, 51, 0.07);
+  --shadow-card-hover: 0 16px 40px rgba(12, 35, 51, 0.12);
+  --shadow-modal: 0 25px 60px rgba(7, 23, 34, 0.35);
+  
+  /* Transitions */
+  --transition-fast: 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-smooth: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-slow: 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}

@@ -1,0 +1,160 @@
+/**
+ * The Ark Montessori Nursery - Approach Section Styles
+ * "The Montessori difference" & 4-step apparatus visual progression
+ */
+
+.approach-section {
+  padding: 5.5rem 0;
+  background-color: var(--color-cream);
+  position: relative;
+}
+
+.approach-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.8fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.approach-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.approach-title {
+  font-size: clamp(2.25rem, 3.5vw, 3rem);
+  font-weight: 500;
+  line-height: 1.15;
+  color: var(--color-navy);
+  margin-bottom: 1.25rem;
+}
+
+.approach-desc {
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  color: #3C4B56;
+  margin-bottom: 1.75rem;
+  max-width: 380px;
+}
+
+/* 4-Step Apparatus Progression Flow */
+.progression-flow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+.progression-step {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+  transition: transform var(--transition-smooth);
+}
+
+.progression-step:hover {
+  transform: translateY(-4px);
+}
+
+.step-image-box {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  background-color: transparent;
+  transition: box-shadow var(--transition-smooth), border-color var(--transition-smooth);
+}
+
+.step-image-box img {
+  width: 90%;
+  height: 90%;
+  object-fit: contain;
+  transition: transform var(--transition-smooth);
+}
+
+.progression-step:hover .step-image-box img {
+  transform: scale(1.06);
+}
+
+.step-title {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--color-navy);
+  margin-bottom: 2px;
+}
+
+.step-subtitle {
+  font-size: 0.8125rem;
+  color: var(--color-warm-gray);
+}
+
+/* Arrow Connector */
+.step-arrow {
+  color: var(--color-gold);
+  font-size: 1.125rem;
+  font-weight: 400;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+/* Interactive Drawer / Badge on Hover */
+.step-badge {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background-color: var(--color-forest);
+  color: var(--color-white);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: var(--radius-full);
+  opacity: 0;
+  transform: scale(0.8);
+  transition: all var(--transition-fast);
+}
+
+.progression-step:hover .step-badge {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Responsive Rules */
+@media (max-width: 1024px) {
+  .approach-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  
+  .approach-desc {
+    max-width: 600px;
+  }
+}
+
+@media (max-width: 680px) {
+  .progression-flow {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  
+  .step-arrow {
+    display: none;
+  }
+  
+  .step-image-box {
+    background-color: var(--color-sand);
+  }
+}

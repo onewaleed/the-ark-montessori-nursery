@@ -1,0 +1,99 @@
+/**
+ * The Ark Montessori Nursery - Pre-Footer CTA Banner Styles
+ * High-conversion experiential banner with arch photography
+ */
+
+.final-cta-section {
+  padding: 2rem 0 5rem;
+  background-color: var(--color-cream);
+}
+
+.final-cta-card {
+  background: linear-gradient(135deg, #09201A 0%, #124436 60%, #0C2333 100%);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  align-items: center;
+  box-shadow: var(--shadow-modal);
+  position: relative;
+}
+
+.final-cta-content {
+  padding: 4.5rem 3.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  z-index: 2;
+}
+
+.final-cta-title {
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 500;
+  line-height: 1.15;
+  color: var(--color-white);
+  margin-bottom: 1.25rem;
+}
+
+.final-cta-desc {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 2.25rem;
+  max-width: 420px;
+}
+
+.final-cta-image-wrapper {
+  position: relative;
+  height: 100%;
+  min-height: 380px;
+  overflow: hidden;
+}
+
+/* Elegant gold curved arch framing the photo */
+.final-cta-image-arch {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-top-left-radius: 240px;
+  border-bottom-left-radius: 240px;
+  overflow: hidden;
+  border-left: 3px solid var(--color-gold);
+  box-shadow: -10px 0 30px rgba(0, 0, 0, 0.3);
+}
+
+.final-cta-image-arch img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  transition: transform var(--transition-slow);
+}
+
+.final-cta-card:hover .final-cta-image-arch img {
+  transform: scale(1.04);
+}
+
+/* Responsive Rules */
+@media (max-width: 900px) {
+  .final-cta-card {
+    grid-template-columns: 1fr;
+  }
+  
+  .final-cta-content {
+    padding: 3rem 2rem;
+  }
+  
+  .final-cta-image-wrapper {
+    min-height: 280px;
+  }
+  
+  .final-cta-image-arch {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-left: none;
+    border-top: 3px solid var(--color-gold);
+  }
+}

@@ -1,0 +1,183 @@
+/**
+ * The Ark Montessori Nursery - Interior Subpages Styles
+ * Shared styles for About, Approach, Environment, Admissions, Parent Info & Contact
+ */
+
+.subpage-hero {
+  padding-top: calc(var(--header-height) + 3.5rem);
+  padding-bottom: 4rem;
+  background: linear-gradient(180deg, var(--color-cream-light) 0%, var(--color-sand) 100%);
+  border-bottom: 1px solid rgba(12, 35, 51, 0.06);
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8125rem;
+  color: var(--color-warm-gray);
+  margin-bottom: 1rem;
+}
+
+.breadcrumb a {
+  color: var(--color-navy);
+  font-weight: 500;
+}
+
+.breadcrumb span {
+  color: var(--color-gold-dark);
+}
+
+.subpage-title {
+  font-size: clamp(2.5rem, 4.5vw, 3.75rem);
+  font-weight: 500;
+  line-height: 1.15;
+  color: var(--color-navy);
+  margin-bottom: 1.25rem;
+}
+
+.subpage-lead {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  color: #354652;
+  max-width: 680px;
+}
+
+.subpage-content {
+  padding: 5rem 0;
+}
+
+/* Feature Grid Cards */
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin: 3.5rem 0;
+}
+
+.feature-card {
+  background-color: var(--color-white);
+  border-radius: var(--radius-md);
+  padding: 2.25rem 2rem;
+  box-shadow: var(--shadow-card);
+  border: 1px solid rgba(12, 35, 51, 0.06);
+  transition: transform var(--transition-smooth);
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+}
+
+.feature-card-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-sm);
+  background-color: var(--color-sand);
+  color: var(--color-forest);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+}
+
+.feature-card-title {
+  font-size: 1.25rem;
+  font-family: var(--font-serif);
+  color: var(--color-navy);
+  margin-bottom: 0.75rem;
+}
+
+.feature-card-desc {
+  font-size: 0.9375rem;
+  line-height: 1.65;
+  color: #4A5863;
+}
+
+/* Fee & Admission Tables */
+.table-wrapper {
+  background-color: var(--color-white);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  border: 1px solid rgba(12, 35, 51, 0.08);
+  overflow-x: auto;
+  margin: 2.5rem 0;
+}
+
+.pricing-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.pricing-table th {
+  background-color: var(--color-sand);
+  padding: 1.25rem 1.5rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-navy);
+  border-bottom: 1px solid rgba(12, 35, 51, 0.08);
+}
+
+.pricing-table td {
+  padding: 1.25rem 1.5rem;
+  font-size: 0.9375rem;
+  border-bottom: 1px solid rgba(12, 35, 51, 0.06);
+  color: #3C4B56;
+}
+
+.pricing-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* FAQ Accordion */
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 2.5rem;
+}
+
+.faq-item {
+  background-color: var(--color-white);
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(12, 35, 51, 0.08);
+  overflow: hidden;
+}
+
+.faq-question {
+  width: 100%;
+  padding: 1.25rem 1.5rem;
+  text-align: left;
+  font-size: 1.0625rem;
+  font-weight: 600;
+  color: var(--color-navy);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+}
+
+.faq-question:hover {
+  background-color: var(--color-sand);
+}
+
+.faq-answer {
+  padding: 0 1.5rem 1.25rem;
+  font-size: 0.9375rem;
+  line-height: 1.65;
+  color: #4A5863;
+  display: none;
+}
+
+.faq-item.is-open .faq-answer {
+  display: block;
+}
+
+@media (max-width: 900px) {
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
+}
