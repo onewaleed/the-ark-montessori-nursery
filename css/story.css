@@ -238,7 +238,7 @@
   border-color: var(--color-mustard);
 }
 
-/* Meet Our Caring Team Grid & Cards */
+/* Meet Our Caring Team 9:16 Piece-to-Camera Video Reel Grid & Cards */
 .team-section {
   padding: 6rem 0;
   background-color: #FDFBF7;
@@ -277,15 +277,17 @@
 
 .team-card {
   background-color: #FFFFFF;
-  border-radius: 24px;
-  padding: 1.75rem 1.5rem 2rem 1.5rem;
-  box-shadow: 0 14px 35px rgba(15, 41, 66, 0.08);
-  border: 2px solid #F3F7F4;
+  border-radius: 32px;
+  padding: 8px;
+  box-shadow: 0 16px 40px rgba(15, 41, 66, 0.1);
+  border: 6px solid #FFFFFF;
+  position: relative;
+  aspect-ratio: 9 / 16;
+  height: 520px;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
-  position: relative;
+  justify-content: space-between;
   transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
 }
 
@@ -304,69 +306,112 @@
 .team-card:hover {
   transform: rotate(0deg) translateY(-8px) scale(1.03);
   z-index: 5;
-  box-shadow: 0 20px 45px rgba(15, 41, 66, 0.15);
-  border-color: var(--color-mustard);
+  box-shadow: 0 24px 55px rgba(15, 41, 66, 0.18);
 }
 
-.team-img-wrapper {
-  width: 150px;
-  height: 170px;
-  border-radius: 90px 90px 20px 20px;
+.team-video-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 24px;
   overflow: hidden;
-  border: 4px solid #FFFFFF;
-  box-shadow: 0 10px 24px rgba(15, 41, 66, 0.12);
-  margin-bottom: 1.25rem;
-  background-color: #FAF5EE;
+  background-color: #0F2942;
 }
 
-.team-img-wrapper img {
+.team-video-wrapper video, .team-video-wrapper img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform var(--transition-smooth);
+  transition: transform var(--transition-slow);
 }
 
-.team-card:hover .team-img-wrapper img {
-  transform: scale(1.05);
+.team-card:hover .team-video-wrapper video,
+.team-card:hover .team-video-wrapper img {
+  transform: scale(1.04);
+}
+
+/* Sound Toggle Button */
+.team-sound-toggle {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(15, 41, 66, 0.65);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1.5px solid rgba(255, 255, 255, 0.3);
+  color: #FFFFFF;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: all var(--transition-fast);
+}
+
+.team-sound-toggle:hover {
+  background: var(--color-mustard);
+  transform: scale(1.1);
+}
+
+/* Floating Bottom Practitioner Info Card */
+.team-info-box {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  right: 12px;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 20px;
+  padding: 1.1rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  z-index: 8;
+  text-align: center;
+  box-shadow: 0 8px 24px rgba(15, 41, 66, 0.12);
 }
 
 .team-name {
   font-family: var(--font-serif);
-  font-size: 1.4rem;
+  font-size: 1.25rem;
   font-weight: 600;
   color: #0F2942;
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.15rem;
 }
 
 .team-role {
-  font-size: 0.84rem;
+  font-size: 0.78rem;
   font-weight: 700;
   color: var(--color-mustard);
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  margin-bottom: 0.75rem;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.4rem;
 }
 
 .team-credential-badge {
   display: inline-block;
-  font-size: 0.78125rem;
+  font-size: 0.72rem;
   font-weight: 600;
   color: #2C5E47;
   background-color: #E5EFE7;
-  padding: 4px 12px;
+  padding: 3px 10px;
   border-radius: var(--radius-full);
-  margin-bottom: 1rem;
+  margin-bottom: 0.4rem;
   border: 1px solid rgba(44, 94, 71, 0.15);
 }
 
 .team-bio {
   font-family: var(--font-script);
-  font-size: 1.25rem;
+  font-size: 1.15rem;
   font-weight: 600;
-  line-height: 1.45;
+  line-height: 1.35;
   color: #2C5E47;
   margin: 0;
-  letter-spacing: 0.01em;
 }
 
 /* Responsive Rules */

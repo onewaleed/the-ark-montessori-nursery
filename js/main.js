@@ -59,4 +59,22 @@ document.addEventListener('DOMContentLoaded', () => {
       btn.setAttribute('aria-label', 'Unmute Sound');
     }
   };
+
+  // Team Video Sound Toggle Handler
+  window.toggleTeamVideoSound = function(btn) {
+    const card = btn.closest('.team-card');
+    const video = card ? card.querySelector('video') : null;
+    const icon = btn.querySelector('.sound-icon');
+    if (!video || !icon) return;
+
+    if (video.muted) {
+      video.muted = false;
+      icon.textContent = '🔊';
+      btn.setAttribute('aria-label', 'Mute Sound');
+    } else {
+      video.muted = true;
+      icon.textContent = '🔇';
+      btn.setAttribute('aria-label', 'Unmute Sound');
+    }
+  };
 });
