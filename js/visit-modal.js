@@ -10,7 +10,7 @@ function createModalDOM() {
   <div class="modal-backdrop" id="visit-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
     <div class="modal-card">
       <div class="modal-header">
-        <h3 class="modal-title" id="modal-title">Book a Visit to The Ark</h3>
+        <h3 class="modal-title" id="modal-title">Book a Visit to The Ark ♡</h3>
         <button type="button" class="modal-close" id="close-visit-modal" aria-label="Close modal">✕</button>
       </div>
 

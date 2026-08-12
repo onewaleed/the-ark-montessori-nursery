@@ -1,14 +1,71 @@
 /**
  * The Ark Montessori Nursery - Footer Styles
- * 5-Column dark navy footer, contact info & accreditation badge
+ * Redesigned nursery footer with wave transition & reassurance badges
  */
 
 .site-footer {
-  background-color: var(--color-navy);
-  color: var(--color-white);
-  padding: 5rem 0 2.5rem;
-  border-top: 1px solid rgba(200, 155, 83, 0.2);
+  background-color: #0C2333;
+  color: #FFFFFF;
+  padding: 4.5rem 0 2.5rem;
   position: relative;
+  overflow: hidden;
+}
+
+.footer-wave {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 35px;
+  pointer-events: none;
+}
+
+/* 4 Reassurance Badges Row */
+.footer-reassurance-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  padding-bottom: 3.5rem;
+  margin-bottom: 3.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.reassurance-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-lg);
+  padding: 1rem 1.25rem;
+  transition: transform var(--transition-smooth), background-color var(--transition-smooth);
+}
+
+.reassurance-badge:hover {
+  background: rgba(255, 255, 255, 0.09);
+  transform: translateY(-2px);
+}
+
+.reassurance-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.reassurance-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.25;
+}
+
+.reassurance-text strong {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: #FFFFFF;
+}
+
+.reassurance-text span {
+  font-size: 0.78125rem;
+  color: #94A3B8;
 }
 
 .footer-grid {
@@ -26,22 +83,22 @@
 }
 
 .footer-logo {
-  margin-bottom: 1.25rem;
+  margin-bottom: 1rem;
   display: inline-block;
 }
 
 .footer-logo img {
-  height: 44px;
+  height: 48px;
   width: auto;
   object-fit: contain;
 }
 
 .footer-tagline {
-  font-size: 0.875rem;
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9375rem;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.75);
   margin-bottom: 1.5rem;
-  max-width: 260px;
+  max-width: 270px;
 }
 
 .footer-socials {
@@ -54,17 +111,17 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 36px;
-  height: 36px;
+  width: 38px;
+  height: 38px;
   border-radius: 50%;
   background-color: rgba(255, 255, 255, 0.08);
-  color: var(--color-white);
+  color: #FFFFFF;
   transition: all var(--transition-fast);
 }
 
 .social-link:hover {
-  background-color: var(--color-gold);
-  color: var(--color-navy);
+  background-color: var(--color-mustard);
+  color: #FFFFFF;
   transform: translateY(-2px);
 }
 
@@ -75,12 +132,10 @@
 
 /* Footer Link Columns */
 .footer-col-title {
-  font-family: var(--font-sans);
-  font-size: 0.875rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--color-gold-light);
+  font-family: var(--font-script);
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #F4C76D;
   margin-bottom: 1.25rem;
 }
 
@@ -92,13 +147,13 @@
 }
 
 .footer-link {
-  font-size: 0.875rem;
+  font-size: 0.9375rem;
   color: rgba(255, 255, 255, 0.75);
   transition: color var(--transition-fast);
 }
 
 .footer-link:hover {
-  color: var(--color-gold-light);
+  color: #F4C76D;
 }
 
 /* Contact Column */
@@ -113,27 +168,27 @@
   display: flex;
   align-items: flex-start;
   gap: 0.75rem;
-  font-size: 0.875rem;
-  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.82);
   line-height: 1.5;
 }
 
 .footer-contact-icon {
-  color: var(--color-gold);
+  color: var(--color-mustard);
   margin-top: 2px;
   flex-shrink: 0;
 }
 
 .footer-contact-icon svg {
-  width: 16px;
-  height: 16px;
+  width: 18px;
+  height: 18px;
 }
 
 /* Accreditation Badge Card */
 .accreditation-card {
   background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(200, 155, 83, 0.3);
-  border-radius: var(--radius-md);
+  border: 1.5px solid rgba(217, 130, 43, 0.4);
+  border-radius: var(--radius-lg);
   padding: 1.5rem;
   display: flex;
   align-items: center;
@@ -141,11 +196,11 @@
 }
 
 .badge-icon {
-  width: 46px;
-  height: 46px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
-  background-color: var(--color-gold);
-  color: var(--color-navy);
+  background-color: var(--color-mustard);
+  color: #FFFFFF;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -158,10 +213,10 @@
 }
 
 .badge-text {
-  font-size: 0.875rem;
+  font-size: 0.9rem;
   font-weight: 600;
   line-height: 1.35;
-  color: var(--color-white);
+  color: #FFFFFF;
 }
 
 /* Bottom Bar */
@@ -171,8 +226,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 0.8125rem;
-  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.84rem;
+  color: rgba(255, 255, 255, 0.55);
   flex-wrap: wrap;
   gap: 1rem;
 }
@@ -183,11 +238,15 @@
 }
 
 .footer-legal-links a:hover {
-  color: var(--color-white);
+  color: #FFFFFF;
 }
 
 /* Responsive Rules */
 @media (max-width: 1100px) {
+  .footer-reassurance-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
   .footer-grid {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -199,6 +258,10 @@
 }
 
 @media (max-width: 680px) {
+  .footer-reassurance-row {
+    grid-template-columns: 1fr;
+  }
+  
   .footer-grid {
     grid-template-columns: 1fr;
     gap: 2rem;
