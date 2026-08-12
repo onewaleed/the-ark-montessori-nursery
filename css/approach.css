@@ -248,9 +248,8 @@
   gap: 4px;
 }
 
-/* Stage Badge Pill on Top Right of both Front and Back faces */
-.flip-front .step-badge,
-.flip-back .step-badge {
+/* Stage Badge Pill on Top Right of Front Face */
+.flip-front .step-badge {
   position: absolute;
   top: 14px;
   right: 14px;
