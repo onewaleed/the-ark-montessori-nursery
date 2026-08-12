@@ -66,6 +66,7 @@ export function initFooter() {
           <h4 class="footer-col-title">Explore</h4>
           <ul class="footer-links">
             <li><a href="about.html" class="footer-link">About The Ark</a></li>
+            <li><a href="our-team.html" class="footer-link">Our Team</a></li>
             <li><a href="our-approach.html" class="footer-link">Our Montessori Approach</a></li>
             <li><a href="our-environment.html" class="footer-link">Our Nursery</a></li>
             <li><a href="admissions.html" class="footer-link">Admissions &amp; Fees</a></li>
