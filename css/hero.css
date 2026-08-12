@@ -180,7 +180,7 @@
 .hero-visual {
   position: relative;
   width: 100%;
-  min-height: 490px;
+  min-height: 560px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -190,21 +190,21 @@
 .blob-frame {
   position: relative;
   width: 100%;
-  max-width: 320px;
+  max-width: 385px;
   aspect-ratio: 9 / 16;
-  height: 480px;
-  border-radius: 100px 100px 36px 36px;
+  height: 550px;
+  border-radius: 120px 120px 48px 48px;
   overflow: hidden;
-  box-shadow: 0 22px 55px rgba(15, 41, 66, 0.18);
+  box-shadow: 0 25px 65px rgba(15, 41, 66, 0.22);
   background-color: #0F2942;
-  border: 6px solid #FFFFFF;
+  border: 7px solid #FFFFFF;
   margin: 0 auto;
   transition: transform var(--transition-slow), box-shadow var(--transition-slow);
 }
 
 .blob-frame:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 28px 65px rgba(15, 41, 66, 0.24);
+  transform: translateY(-6px);
+  box-shadow: 0 32px 75px rgba(15, 41, 66, 0.28);
 }
 
 .blob-frame video, .blob-frame img {
@@ -218,17 +218,17 @@
 /* Sound Mute/Unmute Toggle Button */
 .reel-sound-toggle {
   position: absolute;
-  top: 18px;
-  right: 18px;
-  width: 44px;
-  height: 44px;
+  top: 20px;
+  right: 20px;
+  width: 46px;
+  height: 46px;
   border-radius: 50%;
   background: rgba(15, 41, 66, 0.65);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border: 1.5px solid rgba(255, 255, 255, 0.3);
   color: #FFFFFF;
-  font-size: 1.15rem;
+  font-size: 1.2rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -245,19 +245,19 @@
 /* Floating Bottom Live Tagline Badge */
 .reel-live-badge {
   position: absolute;
-  bottom: 20px;
-  left: 20px;
+  bottom: 22px;
+  left: 22px;
   background: rgba(15, 41, 66, 0.75);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   color: #FFFFFF;
-  padding: 8px 16px;
+  padding: 9px 18px;
   border-radius: 20px;
   display: inline-flex;
   align-items: center;
   gap: 8px;
   font-family: var(--font-script);
-  font-size: 1.3rem;
+  font-size: 1.35rem;
   font-weight: 600;
   border: 1px solid rgba(255, 255, 255, 0.25);
   z-index: 10;
@@ -281,10 +281,10 @@
 /* Overlapping Circular Inset Photo Frame */
 .inset-circle-frame {
   position: absolute;
-  top: 20%;
-  left: -25px;
-  width: 165px;
-  height: 165px;
+  top: 15%;
+  left: -35px;
+  width: 175px;
+  height: 175px;
   border-radius: 50%;
   border: 5px solid #FFFFFF;
   box-shadow: 0 14px 35px rgba(15, 41, 66, 0.15);
@@ -307,10 +307,10 @@
 /* Overlapping Tilted Card Inset Photo Frame */
 .inset-card-frame {
   position: absolute;
-  bottom: -15px;
-  left: 12%;
-  width: 235px;
-  height: 170px;
+  bottom: -20px;
+  left: 8%;
+  width: 250px;
+  height: 180px;
   border-radius: 20px;
   border: 6px solid #FFFFFF;
   box-shadow: 0 16px 40px rgba(15, 41, 66, 0.16);
