@@ -1,18 +1,17 @@
 /**
- * The Ark Montessori Nursery - Approach Section Styles
- * Warm nursery progression flow & interactive apparatus cards
+ * The Ark Montessori Nursery - Montessori Approach Section Styles
+ * 3D Flip Card progression flow for Section 3: "The Montessori difference"
  */
 
 .approach-section {
-  padding: 5.5rem 0 6rem;
-  background-color: #FDFBF7;
+  padding: 5.5rem 0;
+  background-color: #FFFFFF;
   position: relative;
-  overflow: hidden;
 }
 
 .approach-grid {
   display: grid;
-  grid-template-columns: 1fr 1.8fr;
+  grid-template-columns: 1fr 1.65fr;
   gap: 4rem;
   align-items: center;
 }
@@ -28,15 +27,15 @@
   align-items: center;
   gap: 0.4rem;
   font-family: var(--font-script);
-  font-size: 1.65rem;
+  font-size: 1.6rem;
   font-weight: 600;
   color: var(--color-mustard);
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.4rem;
 }
 
 .approach-title {
   font-family: var(--font-serif);
-  font-size: clamp(2.25rem, 3.5vw, 3rem);
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
   font-weight: 600;
   line-height: 1.15;
   color: #0F2942;
@@ -44,20 +43,21 @@
 }
 
 .approach-desc {
-  font-size: 1.0625rem;
-  line-height: 1.7;
+  font-size: 1.05rem;
+  line-height: 1.65;
   color: #4A5568;
-  margin-bottom: 1.75rem;
-  max-width: 380px;
+  margin-bottom: 2rem;
+  max-width: 480px;
 }
 
 .link-arrow {
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
+  gap: 0.5rem;
+  font-size: 0.9375rem;
   font-weight: 600;
   color: #2C5E47;
-  font-size: 0.95rem;
+  text-decoration: none;
   transition: color var(--transition-fast);
 }
 
@@ -65,140 +65,211 @@
   color: var(--color-mustard);
 }
 
-.link-arrow span {
+.link-arrow .arrow {
   transition: transform var(--transition-fast);
 }
 
-.link-arrow:hover span {
+.link-arrow:hover .arrow {
   transform: translateX(4px);
 }
 
-/* 4-Step Apparatus Progression Flow */
+/* 3D Flip Progression Cards Grid */
 .progression-flow {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.85rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
   width: 100%;
+  perspective: 1000px;
 }
 
-.progression-step {
-  flex: 1;
+.progression-card-flip {
+  position: relative;
+  width: 100%;
+  height: 350px;
+  cursor: pointer;
+  perspective: 1000px;
+  user-select: none;
+}
+
+.flip-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  transform-style: preserve-3d;
+}
+
+.progression-card-flip.is-flipped .flip-inner {
+  transform: rotateY(180deg);
+}
+
+/* Front & Back Faces */
+.flip-front,
+.flip-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: var(--radius-xl);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  overflow: hidden;
+  box-shadow: 0 14px 35px rgba(15, 41, 66, 0.1);
+  border: 3px solid #FFFFFF;
+}
+
+/* Front Face */
+.flip-front {
+  background-color: #FAF5EE;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
-  cursor: pointer;
-  position: relative;
-  transition: transform var(--transition-smooth);
 }
 
-.progression-step:hover {
-  transform: translateY(-5px);
-}
-
-.step-image-box {
-  width: 100%;
-  aspect-ratio: 1 / 1.15;
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 1rem;
-  background-color: #FAF5EE;
-  border: 2px solid #FFFFFF;
-  box-shadow: 0 10px 24px rgba(15, 41, 66, 0.08);
-  transition: transform var(--transition-smooth), box-shadow var(--transition-smooth), border-color var(--transition-smooth);
-}
-
-.step-image-box img {
+.flip-front img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: transform var(--transition-smooth);
 }
 
-.progression-step:hover .step-image-box,
-.progression-step.is-selected .step-image-box {
-  border-color: var(--color-mustard);
-  box-shadow: 0 14px 32px rgba(217, 130, 43, 0.2);
+.progression-card-flip:hover .flip-front img {
+  transform: scale(1.05);
 }
 
-.progression-step:hover .step-image-box img {
-  transform: scale(1.06);
+.flip-front-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1.25rem 0.85rem 1rem;
+  background: linear-gradient(to top, rgba(15, 41, 66, 0.94) 0%, rgba(15, 41, 66, 0.65) 70%, transparent 100%);
+  color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
-.step-title {
-  font-size: 0.9375rem;
-  font-weight: 700;
-  color: #0F2942;
+.flip-front-title {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #FFFFFF;
   margin-bottom: 2px;
 }
 
-.step-subtitle {
+.flip-front-subtitle {
   font-size: 0.8125rem;
-  color: #64748B;
+  color: rgba(255, 255, 255, 0.88);
+  margin-bottom: 0.5rem;
 }
 
-/* Arrow Connector */
-.step-arrow {
-  color: var(--color-mustard);
-  font-size: 1.25rem;
-  font-weight: 600;
-  user-select: none;
-  display: flex;
+.flip-prompt-pill {
+  font-size: 0.72rem;
+  font-weight: 700;
+  background-color: var(--color-mustard);
+  color: #FFFFFF;
+  padding: 4px 10px;
+  border-radius: 99px;
+  display: inline-flex;
   align-items: center;
-  justify-content: center;
-  margin-bottom: 2rem;
+  gap: 4px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Interactive Drawer / Badge on Hover */
+/* Back Face */
+.flip-back {
+  background: linear-gradient(135deg, #FDFBF7 0%, #FAF5EE 100%);
+  border: 3px solid var(--color-mustard);
+  transform: rotateY(180deg);
+  padding: 1.5rem 1.15rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.flip-back-stage {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-mustard);
+  background-color: rgba(217, 130, 43, 0.12);
+  padding: 3px 10px;
+  border-radius: 99px;
+}
+
+.flip-back-title {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #0F2942;
+  margin: 0.4rem 0 0.2rem;
+}
+
+.flip-back-skills {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #2C5E47;
+  background-color: #E3ECE5;
+  padding: 3px 10px;
+  border-radius: 99px;
+  margin-bottom: 0.5rem;
+}
+
+.flip-back-desc {
+  font-size: 0.85rem;
+  line-height: 1.55;
+  color: #4A5568;
+  margin: 0;
+}
+
+.flip-back-close {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #64748B;
+  background-color: #FFFFFF;
+  border: 1px solid rgba(15, 41, 66, 0.12);
+  padding: 4px 12px;
+  border-radius: 99px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* Stage Badge Pill on Top Right */
 .step-badge {
   position: absolute;
-  top: -10px;
-  right: -6px;
+  top: 10px;
+  right: 10px;
   background-color: #2C5E47;
   color: #FFFFFF;
-  font-size: 0.6875rem;
+  font-size: 0.7rem;
   font-weight: 700;
-  padding: 3px 9px;
+  padding: 4px 10px;
   border-radius: var(--radius-full);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
-  z-index: 3;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.18);
+  z-index: 5;
 }
 
-/* Dynamic Detail Container Box */
-.montessori-detail-box {
-  background-color: #FFFFFF;
-  border-radius: var(--radius-lg);
-  padding: 1.5rem 1.75rem;
-  border: 1px solid rgba(15, 41, 66, 0.08);
-  box-shadow: 0 10px 30px rgba(15, 41, 66, 0.05);
-  margin-top: 1.75rem;
-  transition: all var(--transition-smooth);
-}
-
-/* Responsive Rules */
-@media (max-width: 1024px) {
+/* Responsive Rules for Flip Cards */
+@media (max-width: 1100px) {
   .approach-grid {
     grid-template-columns: 1fr;
     gap: 3rem;
   }
   
-  .approach-desc {
-    max-width: 600px;
+  .progression-flow {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
   }
 }
 
-@media (max-width: 680px) {
+@media (max-width: 600px) {
   .progression-flow {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
-  }
-  
-  .step-arrow {
-    display: none;
+    grid-template-columns: 1fr;
   }
 }
