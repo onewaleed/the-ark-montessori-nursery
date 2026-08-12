@@ -1,18 +1,19 @@
 /**
  * The Ark Montessori Nursery - Story & Testimonial Section Styles
- * Heritage since 2002, 3-photo strip & parent testimonial card
+ * Tilted polaroid card strip, script eyebrows & cloud testimonial card
  */
 
 .story-section {
-  padding: 5.5rem 0;
-  background-color: var(--color-cream);
+  padding: 6rem 0;
+  background-color: #FDFBF7;
   position: relative;
+  overflow: hidden;
 }
 
 .story-grid {
   display: grid;
-  grid-template-columns: 1fr 1.6fr 1.2fr;
-  gap: 2.5rem;
+  grid-template-columns: 1fr 1.65fr 1.15fr;
+  gap: 2.75rem;
   align-items: center;
 }
 
@@ -23,100 +24,169 @@
   align-items: flex-start;
 }
 
+.story-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-script);
+  font-size: 1.65rem;
+  font-weight: 600;
+  color: var(--color-mustard);
+  margin-bottom: 0.5rem;
+}
+
 .story-title {
+  font-family: var(--font-serif);
   font-size: clamp(2.25rem, 3.5vw, 3.125rem);
-  font-weight: 500;
+  font-weight: 600;
   line-height: 1.15;
-  color: var(--color-navy);
+  color: #0F2942;
   margin-bottom: 1.25rem;
 }
 
 .story-desc {
   font-size: 1rem;
   line-height: 1.7;
-  color: #3C4B56;
+  color: #4A5568;
   margin-bottom: 1.75rem;
 }
 
-/* Middle: 3-Photo Heritage Strip */
+/* Middle: 3 Tilted Polaroid Cards */
 .photo-strip {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 0.875rem;
+  gap: 1rem;
+  padding: 0.5rem;
 }
 
-.photo-card {
+.polaroid-card {
   position: relative;
-  border-radius: var(--radius-sm);
-  overflow: hidden;
-  box-shadow: var(--shadow-subtle);
-  aspect-ratio: 3 / 4;
-  background-color: var(--color-sand);
+  background-color: #FFFFFF;
+  border-radius: 12px;
+  padding: 8px 8px 36px 8px;
+  box-shadow: 0 12px 30px rgba(15, 41, 66, 0.1);
+  border: 1px solid rgba(15, 41, 66, 0.05);
+  transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
 }
 
-.photo-card img {
+.polaroid-card:nth-child(1) {
+  transform: rotate(-4deg);
+}
+
+.polaroid-card:nth-child(2) {
+  transform: rotate(3deg) translateY(-8px);
+}
+
+.polaroid-card:nth-child(3) {
+  transform: rotate(-2deg);
+}
+
+.polaroid-card:hover {
+  transform: rotate(0deg) scale(1.04) translateY(-6px);
+  z-index: 5;
+  box-shadow: 0 18px 40px rgba(15, 41, 66, 0.16);
+}
+
+.polaroid-img-wrapper {
+  width: 100%;
+  aspect-ratio: 3 / 3.8;
+  border-radius: 6px;
+  overflow: hidden;
+  background-color: #FAF5EE;
+}
+
+.polaroid-img-wrapper img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: transform var(--transition-smooth);
 }
 
-.photo-card:hover img {
-  transform: scale(1.05);
-}
-
-/* "2002" Heritage Badge Overlay */
-.heritage-badge {
+.polaroid-caption {
   position: absolute;
   bottom: 8px;
-  right: 8px;
-  background-color: var(--color-forest);
-  color: var(--color-gold-light);
-  font-size: 0.6875rem;
-  font-weight: 700;
-  padding: 3px 7px;
-  border-radius: var(--radius-xs);
-  letter-spacing: 0.05em;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-family: var(--font-script);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #2C5E47;
+  letter-spacing: 0.01em;
 }
 
-/* Right: Testimonial Card */
+/* Heritage Year Badge */
+.heritage-badge {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background-color: #2C5E47;
+  color: #FFFFFF;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: var(--radius-full);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  z-index: 2;
+}
+
+/* Right: Cloud Testimonial Card */
 .testimonial-card {
-  background-color: var(--color-white);
-  border-radius: var(--radius-md);
+  background-color: #FFFFFF;
+  border-radius: 36px 36px 36px 12px;
   padding: 2.25rem 2rem;
-  box-shadow: var(--shadow-card);
-  border: 1px solid rgba(12, 35, 51, 0.06);
+  box-shadow: 0 16px 40px rgba(15, 41, 66, 0.08);
+  border: 2px solid #F3F7F4;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 280px;
+  min-height: 300px;
   position: relative;
 }
 
-.quote-icon {
-  font-family: var(--font-serif);
-  font-size: 3.5rem;
-  line-height: 1;
-  color: var(--color-gold);
-  margin-bottom: 0.5rem;
-  display: block;
+.quote-bubble-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background-color: #FAF3DF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-mustard);
+  margin-bottom: 1rem;
+}
+
+.quote-bubble-icon svg {
+  width: 20px;
+  height: 20px;
 }
 
 .quote-text {
-  font-size: 1.0625rem;
-  line-height: 1.6;
-  color: var(--color-navy);
-  font-style: normal;
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: #0F2942;
+  font-style: italic;
   margin-bottom: 1.5rem;
   flex-grow: 1;
+}
+
+.quote-author-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
 }
 
 .quote-author {
   font-size: 0.875rem;
   font-weight: 600;
-  color: var(--color-warm-gray);
-  margin-bottom: 1.25rem;
+  color: #2C5E47;
+}
+
+.author-badge {
+  font-size: 0.75rem;
+  color: var(--color-mustard);
+  font-weight: 600;
 }
 
 /* Carousel Dots */
@@ -130,14 +200,14 @@
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background-color: var(--color-sand-dark);
+  background-color: #E2E8F0;
   cursor: pointer;
   transition: all var(--transition-fast);
 }
 
 .dot.active {
-  background-color: var(--color-gold-dark);
-  width: 20px;
+  background-color: var(--color-mustard);
+  width: 22px;
   border-radius: var(--radius-full);
 }
 
@@ -145,7 +215,7 @@
 @media (max-width: 1100px) {
   .story-grid {
     grid-template-columns: 1fr 1fr;
-    gap: 2rem;
+    gap: 2.5rem;
   }
   
   .testimonial-card {
@@ -168,6 +238,6 @@
   
   .testimonial-card {
     grid-column: span 1;
-    padding: 1.5rem;
+    padding: 1.75rem 1.5rem;
   }
 }

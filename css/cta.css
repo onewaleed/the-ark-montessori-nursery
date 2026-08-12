@@ -1,11 +1,12 @@
 /**
  * The Ark Montessori Nursery - Pre-Footer CTA Banner Styles
- * High-conversion experiential banner with arch photography
+ * Experiential banner with arch photography and wave transitions
  */
 
 .final-cta-section {
-  padding: 2rem 0 5rem;
-  background-color: var(--color-cream);
+  padding: 5rem 0 6rem;
+  background-color: #FDFBF7;
+  position: relative;
 }
 
 .final-cta-card {
@@ -13,9 +14,9 @@
   border-radius: var(--radius-xl);
   overflow: hidden;
   display: grid;
-  grid-template-columns: 1.1fr 1fr;
+  grid-template-columns: 1.15fr 1fr;
   align-items: center;
-  box-shadow: var(--shadow-modal);
+  box-shadow: 0 20px 50px rgba(15, 41, 66, 0.2);
   position: relative;
 }
 
@@ -27,41 +28,53 @@
   z-index: 2;
 }
 
+.final-cta-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-script);
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #F4C76D;
+  margin-bottom: 0.5rem;
+}
+
 .final-cta-title {
+  font-family: var(--font-serif);
   font-size: clamp(2rem, 3.5vw, 3rem);
-  font-weight: 500;
+  font-weight: 600;
   line-height: 1.15;
-  color: var(--color-white);
+  color: #FFFFFF;
   margin-bottom: 1.25rem;
 }
 
 .final-cta-desc {
   font-size: 1.125rem;
   line-height: 1.6;
-  color: rgba(255, 255, 255, 0.85);
+  color: rgba(255, 255, 255, 0.88);
   margin-bottom: 2.25rem;
-  max-width: 420px;
+  max-width: 440px;
 }
 
 .final-cta-image-wrapper {
   position: relative;
   height: 100%;
-  min-height: 380px;
+  min-height: 400px;
   overflow: hidden;
 }
 
-/* Elegant gold curved arch framing the photo */
+/* Gold curved arch framing the photo */
 .final-cta-image-arch {
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
-  border-top-left-radius: 240px;
-  border-bottom-left-radius: 240px;
+  border-top-left-radius: 260px;
+  border-bottom-left-radius: 260px;
   overflow: hidden;
-  border-left: 3px solid var(--color-gold);
-  box-shadow: -10px 0 30px rgba(0, 0, 0, 0.3);
+  border-left: 4px solid var(--color-mustard);
+  box-shadow: -12px 0 35px rgba(0, 0, 0, 0.35);
 }
 
 .final-cta-image-arch img {
@@ -94,6 +107,6 @@
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
     border-left: none;
-    border-top: 3px solid var(--color-gold);
+    border-top: 4px solid var(--color-mustard);
   }
 }
