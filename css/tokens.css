@@ -18,6 +18,10 @@
   --color-gold-light: #DFB260;
   --color-gold-dark: #A57C36;
   --color-gold-subtle: #F4E8D2;
+  --color-mustard: #D9822B;
+  --color-mustard-hover: #C57322;
+  --color-sage-light: #E3ECE5;
+  --color-sage-dark: #385E4E;
   
   --color-cream: #FAF7F2;
   --color-cream-light: #FDFBF8;
@@ -35,6 +39,7 @@
   /* Typography */
   --font-serif: 'Playfair Display', Georgia, serif;
   --font-serif-accent: 'Newsreader', 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+  --font-script: 'Caveat', cursive;
   --font-sans: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   
   /* Spacing Scale */
