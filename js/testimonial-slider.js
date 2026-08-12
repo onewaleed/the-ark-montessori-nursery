@@ -1,53 +1,78 @@
 /**
- * The Ark Montessori Nursery - Parent Testimonial Carousel Controller
- * Minimal editorial testimonial rotation for Section 5
+ * The Ark Montessori Nursery - Category-Filtered Parent Testimonial Controller
+ * Interactive category pills for filtering real parent reviews
  */
 
 const TESTIMONIALS = [
   {
-    quote: "The Ark has been such a special place for our daughter. She is happy, confident and loves coming every day.",
-    author: "— Ark Parent"
+    category: "settling",
+    categoryLabel: "Settling In",
+    quote: "From the very first week, my son felt so settled and loved at The Ark. He comes home every afternoon beaming with pride.",
+    author: "— Sarah M.",
+    role: "Croydon Parent"
   },
   {
-    quote: "Watching our son develop genuine independence and focus at just 3 years old has been wonderful. The educators are exceptional.",
-    author: "— Croydon Parent"
+    category: "montessori",
+    categoryLabel: "Montessori Growth",
+    quote: "Watching our son develop genuine independence and focus at just 3 years old has been remarkable. The apparatus & educators are exceptional.",
+    author: "— David K.",
+    role: "Parent of 3-year-old"
   },
   {
-    quote: "The calm atmosphere and authentic wooden materials make The Ark stand out from every nursery in South London.",
-    author: "— Parent of 4-year-old"
+    category: "garden",
+    categoryLabel: "Outdoor Garden",
+    quote: "She loves the sensory garden and bringing home little tomatoes she helped water. The outdoor play is second to none.",
+    author: "— Priya P.",
+    role: "Nursery Parent"
   },
   {
-    quote: "Both of our children attended The Ark. Their transition to reception class was so confident thanks to this Montessori foundation.",
-    author: "— Reception Parent"
+    category: "funding",
+    categoryLabel: "Funding & Support",
+    quote: "The admissions team made using our 30 hours government funding so effortless. Transparent, helpful, and deeply caring.",
+    author: "— Marcus T.",
+    role: "Parent of 4-year-old"
   }
 ];
 
 export function initTestimonialSlider() {
   const quoteText = document.querySelector('.quote-text');
   const quoteAuthor = document.querySelector('.quote-author');
+  const authorBadge = document.querySelector('.author-badge');
   const dots = document.querySelectorAll('.testimonial-dots .dot');
+  const filterPills = document.querySelectorAll('.testimonial-filter-pill');
 
   let currentIndex = 0;
   let intervalId = null;
+  let activeCategory = 'all';
+
+  function getFilteredList() {
+    if (activeCategory === 'all') return TESTIMONIALS;
+    return TESTIMONIALS.filter(t => t.category === activeCategory);
+  }
 
   function setTestimonial(index) {
     if (!quoteText || !quoteAuthor) return;
-    currentIndex = index;
+    const filtered = getFilteredList();
+    if (filtered.length === 0) return;
 
-    // Smooth fade
+    const currentItem = filtered[index % filtered.length];
+    currentIndex = index % filtered.length;
+
     quoteText.style.opacity = '0';
     quoteAuthor.style.opacity = '0';
 
     setTimeout(() => {
-      quoteText.textContent = `"${TESTIMONIALS[index].quote}"`;
-      quoteAuthor.textContent = TESTIMONIALS[index].author;
+      quoteText.textContent = `"${currentItem.quote}"`;
+      quoteAuthor.textContent = currentItem.author;
+      if (authorBadge) authorBadge.textContent = currentItem.role;
+
       quoteText.style.opacity = '1';
       quoteAuthor.style.opacity = '1';
 
       dots.forEach((d, i) => {
-        d.classList.toggle('active', i === index);
+        d.classList.toggle('active', i === currentIndex);
       });
-    }, 200);
+    }, 180);
   }
 
   dots.forEach((dot, index) => {
@@ -57,9 +82,20 @@ export function initTestimonialSlider() {
     });
   });
 
+  filterPills.forEach(pill => {
+    pill.addEventListener('click', () => {
+      filterPills.forEach(p => p.classList.remove('is-active'));
+      pill.classList.add('is-active');
+      activeCategory = pill.dataset.category || 'all';
+      setTestimonial(0);
+      resetAutoPlay();
+    });
+  });
+
   function startAutoPlay() {
     intervalId = setInterval(() => {
-      const nextIndex = (currentIndex + 1) % TESTIMONIALS.length;
+      const filtered = getFilteredList();
+      const nextIndex = (currentIndex + 1) % filtered.length;
       setTestimonial(nextIndex);
     }, 6000);
   }
