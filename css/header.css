@@ -59,15 +59,16 @@
 .desktop-nav {
   display: flex;
   align-items: center;
-  gap: 1.75rem;
+  gap: 1.1rem;
 }
 
 .nav-link {
-  font-size: 0.9375rem;
+  font-size: 0.875rem;
   font-weight: 500;
   color: var(--color-navy);
   padding: 0.5rem 0;
   position: relative;
+  white-space: nowrap;
   transition: color var(--transition-fast);
 }
 
@@ -219,7 +220,7 @@
 }
 
 /* Responsive Rules for Header */
-@media (max-width: 1080px) {
+@media (max-width: 1240px) {
   .desktop-nav {
     display: none;
   }
