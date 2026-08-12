@@ -42,4 +42,21 @@ document.addEventListener('DOMContentLoaded', () => {
       observer.observe(el);
     });
   }
+
+  // Hero Video Sound Toggle Handler
+  window.toggleHeroVideoSound = function(btn) {
+    const video = document.getElementById('hero-reel-video');
+    const icon = btn.querySelector('.sound-icon');
+    if (!video || !icon) return;
+
+    if (video.muted) {
+      video.muted = false;
+      icon.textContent = '🔊';
+      btn.setAttribute('aria-label', 'Mute Sound');
+    } else {
+      video.muted = true;
+      icon.textContent = '🔇';
+      btn.setAttribute('aria-label', 'Unmute Sound');
+    }
+  };
 });

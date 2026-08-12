@@ -139,9 +139,23 @@
 
           <!-- Right Column Visual Composition -->
           <div class="hero-visual">
-            <!-- Organic Background Blob Photo Frame -->
+            <!-- Organic Background Blob 9:16 Video Reel Container -->
             <div class="blob-frame">
-              <img src="assets/images/hero-montessori-girl.png" alt="Young girl engaged in hands-on Montessori learning at wooden nursery table">
+              <video id="hero-reel-video" autoplay loop muted playsinline poster="assets/images/hero-montessori-girl.png">
+                <source src="assets/videos/hero-montessori-reel.mp4" type="video/mp4">
+                <img src="assets/images/hero-montessori-girl.png" alt="Young girl engaged in hands-on Montessori learning at wooden nursery table">
+              </video>
+
+              <!-- Mute/Unmute Sound Button -->
+              <button type="button" class="reel-sound-toggle" onclick="toggleHeroVideoSound(this)" aria-label="Unmute Sound">
+                <span class="sound-icon">🔇</span>
+              </button>
+
+              <!-- Live Badge -->
+              <div class="reel-live-badge">
+                <span class="live-dot"></span>
+                <span>A Day at The Ark ✨</span>
+              </div>
             </div>
 
             <!-- Overlapping Circular Inset Photo -->
